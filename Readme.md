@@ -32,9 +32,13 @@ Before running the feast apply command please set the following environment vari
 export AWS_SECRET_ACCESS_KEY=minio123 
 export AWS_ACCESS_KEY_ID=minio
 export FEAST_S3_ENDPOINT_URL=http://localhost:9000
-export S3_ENDPOINT_URL=http://localhost:9000
+export AWS_ENDPOINT_URL=http://localhost:9000
 ```
 Also ensure you are port forwarding to MinIO and Redis.
 
 Once feast apply has run you can try retrieving features by running feast_retrieval/retrieve_features.py. Can also try `feast serve` and `feast ui` commands
 
+To move the feature store yaml to Minio please run the following command  
+```
+python scripts/push_feature_store_config_to_minio.py --bucket-name=feature-registry --minio-endpoint=localhost:9000 --access-key=minio --secret-key=minio123 --insecure --feature-store-path feast/feature_store.yaml
+```
