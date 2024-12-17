@@ -1,8 +1,8 @@
 project: my_feature_repo
-registry: s3://feature-registry/registry.db
+registry: s3://feature-registry/registry_local.db
 provider: local
 offline_store:
   type: file
 online_store:
   type: redis
-  connection_string: "localhost:6379,password=adBC5jtzHa"
+  connection_string: "localhost:6379,password=jGFUi48jvD"
