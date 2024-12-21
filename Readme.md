@@ -36,7 +36,17 @@ export AWS_ENDPOINT_URL=http://localhost:9000
 ```
 Also ensure you are port forwarding to MinIO and Redis.
 
-Once feast apply has run you can try retrieving features by running feast_retrieval/retrieve_features.py. Can also try `feast serve` and `feast ui` commands
+You can run Feast materialization by running the following command
+```
+START_TIME="2022-09-16T00:00:00"
+END_TIME="2023-09-17T00:00:00"
+feast materialize $START_TIME $END_TIME
+```
+**Please ensure you have run Feast Materialization before continuing to further chapters**  
+
+Once feast apply and feast materialize have run you can try retrieving historicalfeatures by running feast_retrieval/retrieve_features.py, and online features by running feast_retrieval/retrieve_online_features.py.   
+
+Can also try `feast serve` and `feast ui` commands  
 
 To move the feature store yaml to Minio please run the following command  
 ```
