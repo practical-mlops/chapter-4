@@ -1,6 +1,6 @@
 pandas==2.2.3
 plotnine==0.14.3
-mlflow==2.7.0
+mlflow==3.0.0
 matplotlib==3.9.2
 minio==7.1.16
 xgboost==1.7.6
